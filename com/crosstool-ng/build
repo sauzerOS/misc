@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+[ "$(kiss-owns /usr/bin/patch)" = patch ] || {
+    printf "/usr/bin/patch must be GNU patch\n"
+    exit 1
+}
+
+[ "$(kiss-owns /usr/bin/awk)" = gawk ] || {
+    printf "/usr/bin/awk must be GNU awk\n"
+    exit 1
+}
+
+./bootstrap
+
+./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --disable-nls \
+    --disable-rpath \
+    --with-ncurses \
+    makeinfo=true \
+    help2man=true
+
+make
+make DESTDIR="$1" install

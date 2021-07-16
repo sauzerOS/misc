@@ -1,0 +1,9 @@
+dbus
+linux-pam
+gnu-efi
+gperf
+kmod
+libcap
+meson
+pkgconf
+shadow

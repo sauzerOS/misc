@@ -1,0 +1,4 @@
+https://github.com/KDE/falkon/archive/d00d385ea66fb607a9c2538ee5c90702a67ec593.tar.gz
+patches/0001-falkon-no-karchive.patch
+patches/0002-falkon-open-mpv.patch
+files/falkon-privacy

@@ -1,0 +1,12 @@
+curl
+diffutils
+findutils
+gawk
+git
+gnugrep
+gzip
+lz4
+sed
+tar
+xz
+zstd

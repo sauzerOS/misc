@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# autorotate_desktop (Xorg version)
+# requites rotate_desktop script in path and iio-sensor-proxy
+#
+# Rotates modern Linux desktop screen and input devices to match. Handy for
+# convertible notebooks. Call this script from panel launchers, keyboard
+# shortcuts, or touch gesture bindings (xSwipe, touchegg, etc.).
+#
+# Using transformation matrix bits taken from:
+#   https://wiki.ubuntu.com/X/InputCoordinateTransformation
+#
+
+# Configure these to match your hardware (names taken from `xinput` output).
+TOUCHPAD='SIPODEV USB Composite Device'
+TOUCHSCREEN='14'
+
+function do_rotate
+{
+
+  TRANSFORM='Coordinate Transformation Matrix'
+
+  case "$1" in
+    normal)
+      rotate_desktop normal
+      ;;
+    right-up)
+     rotate_desktop right
+     ;;
+    left-up)
+      rotate_desktop left
+      ;;
+    bottom-up)
+     rotate_desktop inverted
+     ;;
+  esac
+}
+
+while IFS='$\n' read -r line; do
+    rotation="$(echo $line | sed -En "s/^.*orientation changed: (.*)/\1/p")"
+    [[ !  -z  $rotation  ]] && do_rotate $rotation
+done < <(stdbuf -oL monitor-sensor)

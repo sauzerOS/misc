@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+make
+make CONFIG_PREFIX="$1/usr" install

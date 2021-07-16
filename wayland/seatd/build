@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+export CFLAGS="-Wno-error"
+
+meson \
+    --prefix=/usr \
+    --buildtype=plain \
+    -Dlogind=enabled \
+    . output
+
+ninja -C output
+ninja -C output install
+
+mkdir -pv $1/usr/lib/systemd/system
+install -Dm755 contrib/systemd/seatd.service "$1/usr/lib/systemd/system/"

@@ -1,0 +1,9 @@
+#!/bin/sh -e
+ 
+    #security fix
+    sed -i '160a if(_buffer == nullptr || _size == _pos) return E_FAIL;' CPP/7zip/Common/StreamObjects.cpp
+
+    make 7z OPTFLAGS="$CFLAGS"
+    mkdir -pv "$1/usr/bin"
+    cp -v bin/7z* "$1/usr/bin"
+    cp -v bin/Codecs/Rar.so "$1/usr/bin"

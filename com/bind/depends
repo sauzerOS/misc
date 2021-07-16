@@ -1,0 +1,9 @@
+json-c
+libcap
+libnghttp2
+libuv
+openssl
+perl    make
+pkgconf make
+xz
+zlib

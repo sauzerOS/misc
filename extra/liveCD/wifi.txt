@@ -1,0 +1,3 @@
+For Wifi replace wifi0 with the name of you wireless device in /etc/wpa_supplicant/wpa_supplicant-wifi0.conf
+Edit the file with network ssid and password and start systemD service wpa_supplicant@interfacename
+

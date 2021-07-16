@@ -1,0 +1,15 @@
+https://invent.kde.org/qt/qt/qtwebengine/-/archive/349db5edcb67574f646eca7b336b9571b9777816.tar.gz
+https://invent.kde.org/qt/qt/qtwebengine-chromium/-/archive/eaffb82d5ee99ea1db8c0d4d359bbc72e77f065b.tar.gz src/3rdparty
+patches/dispatch_to_musl.patch
+patches/execinfo.patch
+patches/mallinfo.patch
+patches/musl-sandbox.patch
+patches/patch-syscalls-to-match-musl.patch
+patches/pread-pwrite.patch
+patches/pvalloc.patch
+patches/remove-dbus.patch
+patches/resolv.patch
+patches/siginfo_t.patch
+patches/stackstart.patch
+patches/sysreq-for__WORDSIZE.patch
+patches/thread-stacksize.patch

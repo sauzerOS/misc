@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+mk() {
+    make \
+        GOLANG=no \
+        PREFIX=/usr \
+        SBINDIR=/usr/bin \
+        LIBDIR=/usr/lib \
+        PKGCONFIGDIR=/usr/lib/pkgconfig \
+        RAISE_SETFCAP=no \
+        INDENT=" " \
+        "$@"
+}
+
+mk
+mk DESTDIR="$1" install

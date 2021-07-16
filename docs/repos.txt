@@ -1,0 +1,3 @@
+main: git clone https://github.com/fanboimsft/sauzeros
+kiss: git clone https://github.com/kisslinux/repo kiss
+community: git clone https://github.com/kiss-community/community

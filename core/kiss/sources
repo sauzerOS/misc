@@ -1,0 +1,8 @@
+git+https://github.com/kisslinux/kiss
+https://github.com/kisslinux/website/archive/bb2f7fe3ecec04c04779d56afa166ce7e5890827.tar.gz docs
+https://github.com/kisslinux/wiki/archive/ad8b8f780f88d50060b1feef88b78528d9abba2e.tar.gz wiki
+files/kiss_path.sh
+files/flags.sh
+files/kiss-hook
+files/kiss-cacheman
+files/kiss-rmdeps

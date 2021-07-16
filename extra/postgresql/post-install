@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# postgresql needs it's own user for security reasons
+sudo useradd postgres
+sudo chown -Rv postgres:postgres /var/lib/postgresql
+
+#initialize the DB
+sudo su - postgres -c '/usr/bin/initdb -D /var/lib/postgresql/data'

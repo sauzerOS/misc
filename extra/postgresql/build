@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --enable-thread-safety \
+    --with-libedit-preferred \
+    --with-openssl \
+    --with-python3 \
+    --without-readline \
+    --with-uuid=e2fs
+
+make world
+make DESTDIR="$1" install
+
+pushd contrib/pg_trgm
+make DESTDIR="$1" install
+popd
+
+mkdir -pv "$1/usr/lib/systemd/system"
+install -Dm755 postgresql.service         "$1/usr/lib/systemd/system/"
+install -v -dm700 "$1/var/lib/postgresql/data"

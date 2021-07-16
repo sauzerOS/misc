@@ -1,0 +1,3 @@
+encrypted system boot: root=/dev/mapper/rootfs rd.luks.name=root-uuid=rootfs
+vmware: use lxdm with xf86-input-vmmouse for auto mouse focus
+mpv -vo=vaapi: rebuild libva, ffmpeg after installing intel-vaapi driver 

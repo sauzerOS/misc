@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+./autogen.sh --prefix=/usr     \
+            --enable-kms-only \
+            --enable-uxa      \
+            --mandir=/usr/share/man
+
+make
+make DESTDIR=$1 install

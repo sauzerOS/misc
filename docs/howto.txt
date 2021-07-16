@@ -1,0 +1,27 @@
+#packages to build in live environment with KISS_ROOT=$CHROOT_PATH
+sauzeros-base
+binutils
+linux-headers
+bash
+coreutils
+glibc
+gcc
+make
+patch
+gzip
+kiss
+libcap
+acl
+#cp ssl cert (cp /etc/ssl/cert.pem $CHROOT_PATH/etc/ssl/)
+#chroot (kiss-chroot /$CHROOT_PATH)
+#generate locale /var/db/kiss/installed/glibc/post-install 
+python
+libelf
+bc
+kmod
+util-linux
+libxml2
+#systemd 249 requires python jinja2: pip install jinja2
+systemd
+which
+#rebuild dbus for systemd service

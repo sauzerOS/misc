@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+install -dm 0755 "$1/opt/firefox"
+install -dm 0755 "$1/usr/bin"
+cp -a * "$1/opt/firefox/"
+
+ln -s /opt/firefox/firefox "$1/usr/bin/firefox"

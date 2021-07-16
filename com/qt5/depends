@@ -1,0 +1,13 @@
+bison             make
+flex              make
+freetype-harfbuzz
+gperf             make
+libinput
+libjpeg-turbo
+libpng
+libxkbcommon
+linux-headers     make
+mesa
+perl              make
+sqlite
+zlib

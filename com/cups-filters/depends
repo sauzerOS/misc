@@ -1,0 +1,8 @@
+cups
+freetype-harfbuzz
+ghostscript
+glib
+lcms make
+pkgconf make
+poppler
+qpdf
