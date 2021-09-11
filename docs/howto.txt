@@ -2,7 +2,7 @@
 sauzeros-base
 binutils
 linux-headers
-bash
+dash (bash breaks package manager)
 coreutils
 glibc
 gcc
@@ -12,16 +12,20 @@ gzip
 kiss
 libcap
 acl
+kbd
+readline
 #cp ssl cert (cp /etc/ssl/cert.pem $CHROOT_PATH/etc/ssl/)
 #chroot (kiss-chroot /$CHROOT_PATH)
+#init-repos (/repo/init-repos.sh)
 #generate locale /var/db/kiss/installed/glibc/post-install 
+#rebuild glibc outside of chroot in case of segfault/floating point errors
 python
 libelf
 bc
 kmod
 util-linux
 libxml2
-#systemd 249 requires python jinja2: pip install jinja2
 systemd
 which
 #rebuild dbus for systemd service
+#install iwd if wireless is required
