@@ -29,3 +29,7 @@ systemd
 which
 #rebuild dbus for systemd service
 #install iwd if wireless is required
+iproute2
+inetutils
+nano
+
