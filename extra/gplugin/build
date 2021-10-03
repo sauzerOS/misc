@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+mkdir build
+cd build
+
+meson --prefix=/usr \
+      -Dintrospection=false \
+      -Dhelp2man=false \
+      -Ddoc=false \
+      -Dvapi=false \
+      -Dlua=false \
+      -Dperl5=false \
+      -Dnls=false \
+      -Dpython3=false \
+      -Dgtk3=true \
+      -Dinstall-gplugin-gtk3-viewer=true \
+      ..
+
+ninja
+ninja install

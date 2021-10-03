@@ -1,0 +1,47 @@
+_realname=gplugin
+pkgbase=mingw-w64-${_realname}-hg
+pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}-hg"
+provides=(${MINGW_PACKAGE_PREFIX}-${_realname})
+conflicts=(${MINGW_PACKAGE_PREFIX}-${_realname})
+pkgver=hg
+pkgrel=1
+pkgdesc="GObject based plugin library"
+arch=('any')
+url="https://keep.imfreedom.org/gplugin/gplugin/"
+license=('LGPL2+')
+makedepends=("${MINGW_PACKAGE_PREFIX}-pkg-config")
+depends=("${MINGW_PACKAGE_PREFIX}-glib2"
+         "${MINGW_PACKAGE_PREFIX}-gtk3")
+
+options=(!libtool strip staticlibs)
+
+pkgver() {
+  printf "r%s.%s" "$(hg identify -n)" "$(hg identify -i)"
+}
+
+build() {
+  meson \
+      --buildtype plain \
+      --prefix=/${MINGW_PACKAGE_PREFIX} \
+      --cross-file=${MINGW_PACKAGE_PREFIX}.txt \
+      -Ddoc=false\
+      -Dlua=false \
+      -Dperl5=false \
+      -Dpython3=false \
+      -Dintrospection=false \
+      -Dvapi=false \
+      -Dhelp2man=false \
+       ../
+
+  ninja
+}
+
+package() {
+  DESTDIR="${pkgdir}" ninja install
+
+  set -x
+  install -Dm644 "../COPYING" "${pkgdir}/${MINGW_PACKAGE_PREFIX}/share/licenses/${_realname}/COPYING"
+  set +x
+}
+
+

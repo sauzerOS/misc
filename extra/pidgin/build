@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+mkdir build
+cd build
+
+meson --prefix=/usr \
+      -Dintrospection=false \
+      -Dhelp2man=false \
+      -Dvv=auto \
+      -Ddebug=false \
+      -Dnls=false ..
+
+
+ninja
+ninja install

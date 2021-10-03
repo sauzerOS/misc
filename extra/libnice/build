@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+meson --prefix=/usr \
+      -Dgstreamer=disabled \
+      build
+
+cd build
+ninja
+ninja install
